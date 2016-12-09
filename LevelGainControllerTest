@@ -1,0 +1,326 @@
+//=====================================================================
+var LVMETER = {};
+var LevelController= function(){
+	
+	var generateStats = function(){
+      var n = 1, arr = [];
+	 for(var i = 0; i < 52;i++){
+	         	arr[i] = n++  << 3 * 6;
+	 } 
+      var pO = populateOject(arr);
+       return pO;
+	  
+};
+    function populateOject(arr){
+	    var count = {};
+ 	      for(var j =1; j < 52;j++){
+	        count[j] = arr[j];
+        }
+         return count;
+} 
+	return {
+           pop:populateOject,
+           GS:generateStats
+	};
+	
+};
+var LV = new LevelController();
+console.log(LV.GS()[2]);
+
+
+//=======================================================================
+var LabelStatController = function(){
+      var n = 1, arr = [],count = {};
+        for(var i = 0; i < 52;i++){
+	         	arr[i] =   n++ << 2;
+	    } 
+        for(var j =0; j < 52;j++){
+	        count[j] = arr[j];
+        }
+	    return count;
+};
+
+var LSC = new LabelStatController();
+//console.log(LSC[1]);//adds up 2 5000
+//========================================================================
+
+/*var t = LSC.reduce(function(pr,nx){
+	return pr + nx;
+},0);
+console.log(t);
+*/
+
+// Tree object
+function Tree(){
+	    var name = '';
+	    
+	    var level = 2;
+	    var alive = true;
+	    
+	    this.hp = 100;
+	    this.def = 0;
+	    this.energy =  0;
+	    this.lifeSpan = 0;
+	    this.EXP = 0;
+	    this.attributes = [];
+	    this.abilities = [];
+	    
+	    var image = new Image();
+	    var MAXLV = 50;
+	    var MAXHP = 5000;
+	    var MAXDEF = 5000;
+	    var MAXENERGY = 5000;
+	    var MAXLIFESPAN = 5000;
+	    var MAXEXP = 13631488;
+	    
+	    //===============Validation Methods==============
+	  var ob = this;
+	  var checkStat = function(b,MAX){if(b < 0){return -1;}else if(b > MAX){return MAX;}return b};
+	  var checkSet = function(a){if(a.length < 1 || a === null){return null} return a;};
+      var checkSetNeg = function(n){if(n<0){return -1} return n;};
+	  var checkStringNull = function(n){if(n === ''|| n === null){return n}};
+	  //=================================================
+	    this.setImage = function(ht,wd,img){
+	        this.image = new Image(ht,wd);
+	        this.image.src = img;
+	    };
+	    this.getImage = function(){
+	    	if(img.onerror){
+	    		
+	    	}
+	    	img.onload = function(){
+                 
+        };
+
+	    };
+	 
+	 
+	    // passes 4 tests 
+	    this.processExperiance = function(){
+	    	var i = 0;
+	    	
+	          if( level <= MAXLV){
+	    	   	if(this.processLV(level, this.EXP)){
+	    		       level++;
+	    	   	}
+	    	    if(level > MAXLV || level === MAXLV){
+	    		   console.log('MAX LEVEL');
+	    		   	   return 'MAX';
+	    	      }
+	          }
+	    	 console.log('end');
+	    };
+	    // passed 4 tests
+	    this.processLV = function(lv,exp){
+	    
+	      var LV = new LevelController();
+	      var GS = LV.GS();
+	    	if(lv === 1){ return true}
+	    		
+	    		if(lv > 1){
+	    	   while(  exp > Number(GS[lv]) - 1000  &&   exp < Number(GS[lv] + 1000)){
+	    	   	 	 // LVMETER.stats[i]; init methods increate stats
+	    	   	 	  this.increaseStats(ob,lv);// increase stats  relating to object
+	    	   	 	  
+	    		     	console.log(ob);
+	    	   	 return true;
+	    	   
+	    			
+	    		}
+	    	}
+	    };
+	    this.increaseStats = function(ob,lv){
+	         var LSC = new LabelStatController();
+      
+	               ob.hp += LSC[lv];
+	               ob.def += LSC[lv];
+	    	       ob.energy += LSC[lv];
+	               ob.lifeSpan += LSC[lv]/ 4;
+	    };         
+	    
+	    
+	    this.addAbilities = function(n){checkSet(n);this.abilities.push(n);};
+	    this.extendLifeSpan = function(n){n=checkStat(n,MAXLIFESPAN);this.lifeSpan += n;};
+	    this.getHp = function(){if(hp < 1){alive = false;} return hp};
+	    this.setHp =function(hp){hp = checkStat(hp,MAXHP);this.hp = hp};
+	    this.setLevel =function(lv){lv = checkStat(lv,MAXLV);this.level = lv};
+	    this.getLevel = function(){return level};
+	    this.getExp = function(){return EXP};
+	    this.setExp = function(e){e = checkStat(e,MAXEXP);this.EXP = e};
+	    this.getDef = function(){return def};
+	    this.setDef = function(d){d = checkStat(d,MAXDEF);this.def = d};
+	    this.getName = function(){return name};
+	    this.setName = function(n){n = checkStringNull(n);this.name = n};
+	    this.getEnergy = function(){return energy};
+	    this.setEnergy = function(en){en=checkStat(en,MAXENERGY); this.energy = en};
+	    this.getAbilities = function(){return abilities};
+	    this.setAbilities = function(a){a=checkSet(a); this.abilities = a};
+	  
+	    this.getAttr = function(){return attributes};
+	    this.setAttr = function(a){a=checkSet(a); this.attributes = a};
+	   
+	    this.getLifeSpan = function(){return lifeSpan};
+	    this.setLifeSpan = function(l){l=checkStat(l,MAXLIFESPAN);this.lifeSpan = l};
+	    this.selectAbility = function(n){n=checkStat(n);return this.abilities[n];};
+	    this.removeAbility = function(n){n=checkSetNeg(n);this.abilities.slice(n,1);};
+	   
+	    this.displayAbilities = function(){
+	    	  for(var a in this.abilities){
+	    	  	     console.log(this.abilities[a]);
+	    	  	     // display to screen aadd to div
+	    	  }
+	    };
+	   
+	    this.createTree = function(h,e,l){
+	            var obj = Object.create(this);
+	              obj.hp = h;
+	              obj.energy = e;
+	              obj.lifeSpan = l;
+	            return obj;
+	    };
+	    this.treeStat = function(){return ob;};
+	    
+}
+
+Tree.prototype = {
+   testGets:function(trr,test01){
+    	if(typeof test01 === 'number'){
+	      for(var i= 0; i < 4;i++){
+	    	tree.setHp(test01);
+	    	tree.setEnergy(test01);
+	    	tree.setLifeSpan(test01);
+       	   } 
+		 return trr;
+    	} 
+   },
+	gainLv:this.level +=1,
+	addExp:function(amt){this.EXP += amt;},
+	addToHp:function(amt){this.hp += amt},
+	addToEnergy:function(amt){this.energy += amt},
+	addToLifespan:function(amt){this.lifeSpan += amt},
+	
+};
+       
+// Tree Object emd       
+var tree = new Tree();
+
+var player = tree.createTree(190,100,10);
+console.log(player);
+player.setLifeSpan(200);
+console.log(player);
+
+tree.processExperiance(786432 - 500);
+//======Abilities ========================================================
+
+function ability(n,d,fn){
+    var dictionary = {name:n,desc:d,action:{0:[fn]}};   
+    this.addAbility = function(f){
+    	 dictionary.push(f);
+    }
+	     return dictionary;
+}
+function abilityList(g){
+	  var arr = [];
+     for(var i = 0; i < g.length;i++){
+           arr[i] = g[i];
+     }
+}
+
+function moves(){
+	
+	
+}
+
+function Harden00(aa){
+	   if(typeof aa === 'object'){
+	      aa.def += 100;
+	      setTimeout(50000,function(){aa.def -= 100});
+	   }
+}
+function Repel0(aa){
+		
+	if(typeof aa === 'object'){
+		Animals().globalWeakening();
+	}
+	
+}
+
+
+
+var Harden = new ability('Harden','Increases defense by 100',Harden00(tree));
+var Repel = new ability('Repellent','Lowers all animals attack and defense', Repel0(tree));
+
+var movesList = {Harden:Harden,Repel:Repel};
+//======Abilities END ========================================================
+
+function Animals(a,d,l){
+	  this.hp = 10;
+	  this.att = a;
+	  this.def = d;
+	  this.speed = 2;
+	  this.abilityList = l;
+	  
+	  this.globalWeakening = function(){
+	  		this.att -= 100;
+			this.def -= 100;
+	  }
+	  return {
+	  	   hp:this.hp,
+	  	   att:this.att,
+	  	   def:this.def,
+	  	   speed:this.speed,
+	  	   abilityList:this.abilityList,
+	  	   globalWeakening:this.globalWeakening
+	  }
+} 
+
+var Lion = new Animals(10,5,[]);
+var Bear = new Animals(10,5,[]);
+var Bat = new Animals(10,5,[]);
+var snake = new Animals(10,5,[]);
+var eagle = new Animals(10,5,[]);
+var ants = new Animals(10,5,[]);
+
+
+
+//===========================Lion===========================================
+Lion.prototype = {
+	 speedUp: function(){
+	 	 this.speed += 4;
+	 },
+	 upStats:function(){
+	 	var val = Object.keys(Lion);
+	     
+	     for( var i in Lion){
+	 	   if(typeof Lion[i] === 'number'){
+	 	  	  Lion[i] += 10;
+	 	 }
+	 }},
+	  tempSelfHeal:function(){
+	  	  var prevValue = Lion.hp;
+	  	  Lion.hp += 200;
+	  	  setTimeout(function f(){
+	  	  	  Lion.hp = prevValue;
+	  	  },10000);
+	  }
+}
+
+//===========================Lion END=========================================
+function setUp(x,y,arr){
+	  this.x = x;
+	  this.y = y;0
+	  this.arr = [];
+	  
+	  
+	  
+	  
+	  return {x:x,y:y,arr:arr}
+}
+
+
+
+
+
+
+
+
