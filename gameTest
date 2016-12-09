@@ -1,0 +1,348 @@
+var humans = {
+    type:[],
+    neutral:{   name:'',
+                label:'',
+                type:'',
+                speed:12,
+    	        cost:1400,
+    	        hitPoints:600,
+    	        sight:2},
+    follower:{  name:'',
+                label:'',
+                type:'',
+                speed:12,
+    	        cost:1400,
+    	        hitPoints:600,
+    	        sight:2},
+    believer:{  name:'',
+                label:'',
+                type:'',
+                speed:12,
+    	        cost:1400,
+    	        hitPoints:600,
+    	        sight:2},
+    saint:{     name:'',
+                label:'',
+                type:'',
+                speed:12,
+    	        cost:1400,
+    	        hitPoints:600,
+    	        sight:2},
+    	        imagesToLoad:[
+    	            {name:'move',count:32},
+        	        {name:'harvest-00',count:4}, // images
+        	        {name:'harvest-04',count:4},
+        	        {name:'harvest-08',count:4},
+        	        {name:'harvest-12',count:4},
+        	        {name:'harvest-16',count:4},
+        	        {name:'harvest-20',count:4},
+        	        {name:'harvest-24',count:4},
+        	        {name:'harvest-28',count:4},
+        	    ],
+    	        pixelWidth:48,
+    	        pixelHeight:48, 
+    	        pixelOffsetX:-24,
+        	    pixelOffsetY:-24,
+        	    collisionRadius:6, //20
+        	    softCollisionRadius:12
+	        
+    
+}
+function makerType(obj,type){
+    
+        
+}
+
+
+function searchFrames(hum){
+         return hum.imagesToLoad.forEach(function(it){
+                 console.log(it);
+          });
+}
+searchFrames(humans);
+
+function NameHumanType(obj,name){
+     var hum = typeof obj === 'object';
+      if(hum){
+          obj.name = name;
+      }
+    
+}
+function addSprites(obj,name, count){
+           if(typeof obj ==='object'){
+              obj.imagesToLoad.push({name:name,count:count});
+           }
+}
+
+
+var abilities = { };
+function addNewAbility(PO,name,newMove){
+          PO.abilities[name] = newMove;    }
+
+var stats = {
+     hp:0,
+     energy:0,
+     speed:0,
+     level:0,
+     setLv:function(lv){this.lv = lv;},
+     currentLv:function(){ return this.level;},
+     abilities:{},
+     useAbility:function(name){
+          console.log(this.abilities[name]);
+          this.currentMoveUsed = this.abilities[name];
+     },
+     currentMoveUsed:''
+    
+}
+
+function addFrames(O,frameObject){
+       O.frames.push(frameObject);
+       console.log(O.frames);
+}
+
+
+addNewAbility(stats,'IceFreeze','Cold');
+addNewAbility(stats,'Fire','Burn');
+addNewAbility(stats,'Slug','Slow');
+stats.useAbility('IceFreeze');
+console.log(stats);
+
+function player(stats){}
+player.prototype = { frames:[]}
+
+var Brad = new player();
+addFrames(Brad,{name:'d'});
+
+function enemies(){}
+enemies.prototype = {};
+
+function settings(){}
+settings.prototype = {}
+
+function equipment(){}
+equipment.prototype = {};
+function printEquipment(O){
+       for(var i in O){
+           console.log(i);
+       }
+    
+}
+var u = 0;
+var t = 5;
+var arr = ['','','','','','',''];
+var num;
+var j =0;
+var str = '';
+while(u < t){
+    if(u != 5){
+        ++u;
+        num = arr[u];
+        console.log(num);
+        str = 'bRITISH'.charAt(j);
+        j++;
+    }
+    
+}
+console.log(str);
+
+function Obstacles(){
+    
+    
+}
+
+//==========================================JOB========================================================================
+function game(){}
+game.prototype = {}
+
+var abilities = { };
+function addNewAbility(PO,name,newMove){
+          PO.abilities[name] = newMove;    }
+
+var stats = {
+     hp:0,
+     energy:0,
+     speed:0,
+     level:0,
+     setLv:function(lv){this.lv = lv;},
+     currentLv:function(){ return this.level;},
+     abilities:{},
+     useAbility:function(name){
+          console.log(this.abilities[name]);
+          this.currentMoveUsed = this.abilities[name];
+     },
+     currentMoveUsed:''
+    
+}
+
+function addFrames(O,frameObject){
+       O.frames.push(frameObject);
+       console.log(O.frames);
+}
+
+
+addNewAbility(stats,'IceFreeze','Cold');
+addNewAbility(stats,'Fire','Burn');
+addNewAbility(stats,'Slug','Slow');
+stats.useAbility('IceFreeze');
+console.log(stats);
+
+function player(stats){}
+player.prototype = { frames:[]}
+
+var Brad = new player();
+addFrames(Brad,{name:'d'});
+
+function enemies(){}
+enemies.prototype = {};
+
+function settings(){}
+settings.prototype = {}
+
+function equipment(){}
+equipment.prototype = {};
+function printEquipment(O){
+       for(var i in O){
+           console.log(i);
+       }
+    
+}
+var u = 0;
+var t = 5;
+var arr = ['','','','','','',''];
+var num;
+var j =0;
+var str = '';
+while(u < t){
+    if(u != 5){
+        ++u;
+        num = arr[u];
+        console.log(num);
+        str = 'bRITISH'.charAt(j);
+        j++;
+    }
+    
+}
+console.log(str);
+
+function Obstacles(){
+    
+    
+}
+var game = {};
+game.prototype = function(){};
+var scene = this;
+var gameoverScene = game.gameoverScene = Object.create(scene);
+var gameScene = game.gameScene = 
+Object.create(scene);
+
+game.createFrame = function(){
+       var f1 = function(){}
+       var f2 = function(){}
+       var game = this.start || {};
+};
+//gameoverScene.node = document.getElementById('gameover-scene');
+gameoverScene.handleInput = function() {
+
+document.getElementById('back-to-menu-button').onclick = function() {
+            game.flow.startOver();
+};}
+
+game.flow = {
+     startOver:function(){
+          game.startScene.hide();
+          game.summaryScene.hide();
+          game.gameOverScene.hide();
+          game.gameScene.hide();
+          game.gameOverScene.show();
+     },
+     gameWin:function(){
+         game.gameScene.hide();
+         game.summaryScene.show();
+     },
+     gameOver:function(){
+          game.startScene.show();
+          game.gameScene.hide();
+          game.gameOverScene.show();
+         
+     },nextLevel: function() {
+          game.startScene.hide();
+          game.summaryScene.hide();
+          game.gameScene.show();
+},
+        finishLevel: function() {
+          game.gameScene.hide();
+          game.summaryScene.show();
+}
+};
+
+var init = function(){
+     game.startScene.handleInput();
+     game.summaryScene.handleInput();
+     game.gameoverScene.handleInput();
+     game.gameScene.handleInput();
+    
+};
+
+var quest = [[5,6], [3], [1,2], [1,2]];
+var Quest = game.Quest = (function(){
+        function Quest(lv){
+            var questData = questLv[lv];
+            this.data = questData;
+        } 
+    //Quest.prototype = new game.Composition();
+    // extends the Quest prototype from Composition.
+    return Quest;
+
+})();
+
+gameScene.visualize = function(quest) {
+  var questData = quest.data;
+  var patternsToShow = [];
+    for (var i in questData) {
+    for (var j in questData[i]) {
+     patternsToShow.push(questData[i][j]);
+}
+}}
+
+var title = 'Game';
+
+var width = '';
+var height = '';
+var stages = [];
+var running = false;
+var locations = [[1,2,3],[5,6,7],[8,9,10]];
+
+var fil = locations.forEach(function(item){
+     return locations.filter(function(it){
+             return it[0] === 5;
+       });
+});
+   console.log(fil);
+function stageObj(player){
+          running = true;
+         if(running){
+            locations[1] = player; 
+             
+             
+             
+         }
+    
+}
+stageObj.prototype = {
+      portion1:[],
+      portion2:[]
+    
+    
+    
+};
+
+function makeStage(stageName,lvNum, stageObj){
+         name = stageName;
+         if(lvNum === 0){ return 0;}
+         if(lvNum > 0){
+             
+         }
+    
+    
+}
+
