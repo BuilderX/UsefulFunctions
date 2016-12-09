@@ -749,7 +749,251 @@ function genCharArray(charA, charZ) {
 }
 
 
+function removeDup(str){
+      var len= str.length,
+      char,
+      charCount = {},
+      newStr = [];
+      
+      for(var i = 0;i < len;i++){
+            char = str[i];
+           
+           if(charCount[char]){
+               charCount[char]++;
+         }else
+               charCount[char] =1;}
+          for(var j in charCount){
+              if(charCount[j]==1)
+                  newStr.push(j);
+                  
+          }
+              return newStr.join(' ');
+          }
+var ob = {};
+var vhars;
+vhars = 4;
+var newStr = [];
+if(ob[stry]){
+    console.log(ob[stry]);
+    console.log(ob[stry]++);
+    ob[stry] ++;
+}else{
+    ob[stry] = 1;
+    
+}
+for( var j in ob){
+     if(ob[j] ==1){
+         newStr.push(j);
+         console.log(j)
+     }
+}
+function findOdd(A) {
+   var tempO = {};
+   
+  return A.map(function(item){
+         if(tempO[item]){
+             tempO[item]++;
+        
+         }else tempO[item] = 1;
+         A.filter(function(){}) 
+    });
+     
 
+}
+findOdd ([2,3,4,5,6,7,8,-1]);
+
+
+function loop(arr,fn){
+    for(var i =0;i < arr.length;i++){
+         fn.call(arr,arr[i],i);
+    }
+    
+}
+
+var num = 0;
+    loop([0,1,2],function(value,i){
+         console.log(value);
+         
+    });
+var shop = {
+    cart:[],
+    usage:function(){
+        this.cart = [1,2,3,4,5];
+        console.log(this.cart);
+        
+    }
+    
+}
+shop.usage();
+
+var obj = {};
+function fn(){
+    return this;
+    
+}
+
+function add(a, b){ 
+  return a + b; 
+} 
+add.call(this,1,2);
+
+var o = add.call(this,1,4);
+console.log(o)
+
+function loops(array,fn){
+      for(var i =0;i < array.length;i++){
+          fn.call(array,array[i] + 12,i);
+      }
+     
+    
+}
+var num = 0;
+    loops([0,1,2,5,6,78,3,4],function(value,i){
+         console.log(value);
+         
+    });
+
+function soldier(){
+     this.shoot = false;
+
+    this.cockGun = function(){
+         this.shoot = !this.shoot;
+         return this.shoot;
+         
+        
+    }
+}
+var sold = new soldier();
+console.log(sold.shoot);
+
+var ans = 0.0;
+
+var cooked = [4,5,6,7[4,5,6,5],545,45,8];
+var y = [2,3,5,6,78,9,0,20];
+var x = [1,2,4,5,6778,8];
+var StorageSet = [];
+ console.log('starting');
+ 
+for(var i =0;i < cooked.length-1;i++){
+     ans += 0.5 * x[i] * y[i];
+     StorageSet[i] = ans;
+     
+}
+console.log(StorageSet)
+
+    console.log(newStr);
+    
+    
+    //=============================PokeGo
+function MapType(){
+      var RoadMap;
+      var Satellite;
+      var Terrain;
+      var Hybrid;
+    
+    
+    
+}
+
+var onStart = true;
+var autoLocateCenter = true;
+var gMaps;
+var zoom = 13;
+var mapType = new MapType();
+var size = 512;
+var markers = [];
+var path = [];
+
+
+
+
+
+function Start(){
+     if(onStart === true){
+         Refesh();
+         
+     }}
+function Refesh(){
+      if(autoLocateCenter && 
+      (markers.length ===0 && path.length ===0)){
+             console.log('Error');
+      }
+       StartRoutine(sRefesh());
+}
+
+function sRefesh(){
+    var url = "http://maps.googleapis.com/maps/api/staticmap";
+	var qs = "";
+	
+	if(!autoLocateCenter){
+	    if(centerLocation.address != "")
+	    qs += "Center" + (centerLocation.address);
+	    else{
+	        qs += 'center' + 'string.format()'
+	    }
+	}		
+	for(var i in markers){
+	    qs += 'markers' += 'string.format()';
+	    
+	}
+}
+var colors = ['black',	'brown','green','purple',
+		'yellow',
+		'blue',
+		'gray',
+		'orange',
+		'red',
+		'white'];
+var centerLocation = {
+      address:url
+    
+}
+
+function googleMapLoc(){
+        var address;
+        var latitude;
+        var longitude;
+}    
+var MapSize = {Tiny:0,Small:1,Mid:2};
+    
+function subS(str,subStr){
+    var len = str.length;
+    var subEnd = str.length;
+    var char = 0;
+    var edge;
+    var i = 0, j = 0;
+        
+    for(;i < len ; i++){
+            
+      if(str[i] == subStr[j])
+         j++;
+      else
+         j = 0;
+      
+      //check starting point or a match   
+      if(j == 0)
+        idx = i;
+      else if (j == subLen)
+        return idx;
+    }
+
+        return -1;
+  }
+
+            
+        }
+        
+        
+    }
+    
+    
+    
+	  
+	  
+	  
+	  
+	  
+	  
 
 	
 
