@@ -1,0 +1,63 @@
+function isViewField(fieldNumber){
+ return ( isViewField(fieldNumber) && (handSlots.indexOf(fieldNumber) !== -1 ||
+    spellSlots.indexOf(fieldNumber) !== -1 || monsterSlots.indexOf(fieldNumber) !== -1))
+  || model.fields[fieldNumber].state === 0 || model.fields[fieldNumber].state === 2;
+
+   	
+}
+isViewField(0);
+
+function isMyField(fieldNumber){
+	 return userCode ? (fieldNumber >= 15) : (fieldNumber < 15);	
+}
+
+function isValidStats(state,fieldNumber){
+	
+	if(handSlots.indexOf(fieldNumber) !== -1){
+		return state === 0 ;
+	}
+	if(spellSlots.indexOf(fieldNumber) !== -1){
+		return state === 0  || state === 1;
+	}
+	if(monsterSlots.indexOf(fieldNumber) !== -1){
+		return true ; //state === 0 || state  ==== 2 || state ==== 3
+	}
+	if(fieldSlots.indexOf(fieldNumber) !== -1){
+		return state === 0; //state === 0 || state  ==== 2 || state ==== 3
+	}
+	if(graveSlots.indexOf(fieldNumber) !== -1){
+		return state === 0  ; //state === 0 || state  ==== 2 || state ==== 3
+	}
+	if(deckSlots.indexOf(fieldNumber) !== -1){
+		return state === 0  || state === 1 ; //state === 0 || state  ==== 2 || state ==== 3
+	}
+}
+
+
+function bindDroppingEvents(){
+	    var field = model.fields[fieldNumber].element;
+	
+		field.addEventListener('click',function(e){
+			   if(!isViewField(fieldNumber)) return;
+			   if(e.button !== 0) return;
+			   
+			   var target , isOpen = field.classList.contains('js-waved-open');
+			   if(field.children.length < 3 & !isOpen) return;
+			   if(isOpen){
+			   	  field.classList.remove('js-waved-open');
+			   	  body.classList.remove('js-waved-open');
+			   	  target = field;
+			   } else{
+			      field.classList.remove('js-waved-open');
+			   	  body.classList.remove('js-waved-open');
+			   	  target = field.parentNode.nextElementSibling;
+			   	 
+			   	
+			   }
+			
+			
+		});	    
+	
+	
+	
+}
