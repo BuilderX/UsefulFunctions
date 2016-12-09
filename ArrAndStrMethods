@@ -1,0 +1,194 @@
+function reverseCipher(){
+	  message = 'Three can keep a secret, if two of them are dead.';
+	  translated = '';
+	  
+	  i = message.length - 1;
+	  while (i >= 0){
+	  	 translated = translated + message[i];
+	  	 i = i - 1;
+	  	
+	  }
+	  return translated;
+}
+
+reverseCipher().split('').reverse().join('');
+
+function cry(){
+	 key = 13, message = 'This is my secret message',mode = 'encrypt';
+	 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',translated = '';
+	 message = message.toUpperCase();
+	 
+	 for(var sym in message){
+	 	if(message[sym] == LETTERS[sym]){
+	 	    NUM = LETTERS.indexOf(message[sym]);
+	 	    	console.log(NUM)
+	 	    }
+	 }
+}
+function makeMap(){
+       var level1 = [];
+       var level00 = [];
+       
+     for(var i = 0; i < 10; i++){
+             level1.push(level00);  	
+       }
+       
+       return level1;
+}
+function searchVowels(str){
+         var vow = ['a','e','i','o','u','y'],i=0,j=0,counter =1;
+         newStr = str.split(''), arr= [],match = false;
+                
+          for(var i =0; i < newStr.length;i++){
+               for(var j = 0; j < vow.length;j++){
+            if(newStr[i] === vow[j]){ 
+             	     counter++
+             }  
+          }}          
+          console.log(counter);
+}
+function randomColor(){
+	  var color  = '#',randomizeNumbs = '',letters = "abcdef1234567890".split('');
+	     for(var i =0; i < 6;i++){
+	  	  var num = Math.floor(Math.random() * letters.length);
+	        if(num != undefined){color += letters[num].toUpperCase()} }
+	           return color;
+}
+// ARRAY =====================================
+function getLengthOfMissingArray(arrayOfArrays) {
+   if(arrayOfArrays === null ){return 0}
+   var arr = [];
+   for(var i = 0; i < arrayOfArrays.length;i++){
+       if( arrayOfArrays[i].length === 0 || arrayOfArrays[i] === null){
+      	   	 return 0;
+       }else{
+      	  arrayOfArrays[i].forEach(function(o){if(o !== null) return o.length});
+      	  arr[i] = arrayOfArrays[i].length
+      	  arr.sort();
+      	    }
+        }
+     if(arr === 0 ){ return 0 }
+     var sum = arr.reduce(function(a,b){ return a + b},0);
+     total =  (arr.length + 1) * (arr.length   + 2) / 2;
+  
+       return total - sum ;
+}
+getLengthOfMissingArray([[1, 4, 0, 0],
+[4, 0, 4, 4, 0, 4, 1],
+[4, 3, 4, 3, 3, 1],
+[0, 4, 2, 4, 0],
+[2, 4, 2, 4, 2, 4, 4, 3],
+[4, 3, 1, 1, 2, 1, 2, 1, 3],
+[3, 1, 2, 3, 1, 0, 4, 1, 0, 0, 2],
+[3, 0, 1, 2, 3, 2, 2, 1, 4, 4, 0, 0, 4],
+[3, 3, 3, 1, 1, 2, 0, 2, 1, 2, 2, 4]]);
+
+function holdIt(){
+	  this.dataContainment = []
+	  this.badData = [];
+	  var that = this;
+	  
+	  this.store = function(data){
+	  
+	if(Object.keys(data).length > 0 || typeof data === 'Object'){
+	  	  	 this.dataContainment.push(data);
+	  	 }
+	 }
+	 this.checkObject = function(){
+	 
+	   
+	for(var i = 0; i < that.dataContainment.length;i++){
+	   	if(that.dataContainment[i].canStore === false ){
+  	       this.badData.push(that.dataContainment[i]);
+  	 
+	 	  	}
+	 	  }
+	 	}  
+	 
+	 
+	
+	 this.scanDataWithinArray = function(){
+	   
+      for(var i = 0; i < that.dataContainment.length;i++){  
+   	    for(var j = 0; j < that.dataContainment[i].data.length;j++){
+		 if(that.dataContainment[i].data[j] === '' || that.dataContainment[i].data[j].length > 500){
+				this.blankData.push(that.dataContainment[i].data[j]);	
+		 }else{
+	     if(that.dataContainment[i].data[j].length > 0){
+			    var dataScanner = that.dataContainment[i].data[j];	
+			    var cleanData = this.processData(dataScanner);
+	      		if(cleanData.length ===  0 ){
+	      			return false;
+	      			
+	      		}else{
+	      			console.log(cleanData);
+	      			
+	      		}
+	     	
+	     }	  
+			}
+	    }    	
+      }
+	 }
+	 this.processData = function(dataScanner){
+	 	   var u = 0;
+	 	   DS = dataScanner.split('');
+	 	   while(u < dataScanner.length){
+	 	   	 if(DS[u] === 'i' && DS[u + 1] === 'f' && DS[u + 2] === '('){
+	 	   	         DS.splice(u,3);
+	 	   	   }
+	 	   	u++
+	 	   }
+	    return DS.join('');
+	 	
+	 }
+}
+
+function unfold(n){
+	var list = [];
+	
+	for(var i = n; i > 0 ;i--){
+		  list.push(i);
+	}
+	return list;
+}
+
+unfold(5);
+
+function fold(list){
+	
+	for(var i = -1; i <= list.length;i++){
+	       list.pop();
+	}
+	return list;
+}
+fold([5,4,3,2,1]);
+
+
+
+function takeMid(arr){
+	if(arr.length === 0 ){ return 0;}
+	var half = Math.round(arr.length/2);
+	return half;
+}
+
+
+function spinalCase(str) {
+  // "It's such a fine line between stupid, and clever."
+  // --David St. Hubbins
+   var s = '',t= '';
+  for(var i = 0; i < str.length; i++){
+      
+	     s += str[i].toLowerCase();
+        
+  }
+      t =  s.replace(/\s/g,'-');
+      t =  s.replace('',' ');
+      
+  return t;
+}
+
+
+
+
+
