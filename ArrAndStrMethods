@@ -731,7 +731,26 @@ function close_compare(a,b){
 }*/
   
   
-  
+  function n (str,listPosition){
+    
+        var a  = "abcdefghijklmnopqrstuvwxyz";
+        var pos = 0;
+        var sum = 0;
+}
+n('COLIN',334);
+
+
+function genCharArray(charA, charZ) {
+    var a = [], i = charA.charCodeAt(0), j = charZ.charCodeAt(0);
+    for (; i <= j; ++i) {
+        a.push(String.fromCharCode(i));
+    }
+    return a;
+}
+
+
+
+
 	
 
 
