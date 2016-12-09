@@ -1,0 +1,40 @@
+var ArrayController = function (arr,g){
+	    goer = {},side = [];
+	    console.log('Starting--- ');
+	    
+	if(typeof arr === "object"){
+	   if(isArray(arr)){
+	 goer = {
+	   test:function(){
+	    	console.log('Phase One');
+	        return [];
+	   	
+	   }      
+	 }}
+	}
+	   
+        return goer;
+};
+
+var arr = [];
+var init = new ArrayController(arr);
+
+var spark = init.test;
+var fitness = spark;
+var defaultArr = spark();
+
+function isArray(obj){
+    return !!obj && Array === obj.constructor;
+}
+
+function createOne(hp,moveDir){
+       this. hp = hp;
+       this.moveDir = moveDir;
+       this.arr = [];
+       this.geneticCode = 
+       'ATGCCGTAATGCCGTATATAATATATGCGCGCCG'.split('');
+    
+}
+
+
+
