@@ -1,0 +1,465 @@
+var anyCustomerTest = function(){
+    var that = this;
+    var create = {left:0,right:0};
+    var USER = {voteCount:0,Votes: Votes()};
+    var reg = /(?=[a-z])\w{2}(\d{1,2})?(?!\d)/; 
+    console.log(that.fish);
+    if(reg.test(that.fish)){
+        
+        create.left += 1;
+    }else if (!reg.test(that.fish)){
+        create.right += 1;
+
+    }
+    
+     console.log(create);
+};
+function Votes(){
+     console.log(); 
+}
+var Britton = {
+    t:anyCustomerTest ,
+    fish:'awty3345'
+};
+Britton.t();
+console.log(anyCustomerTest);
+
+
+
+(function (){
+        var factory = {StorageFacility:[]};
+        
+        var packageQueue = [];
+        var top = null;
+        
+        var addressFine = /\d{1,6}\s(\w{1,4})?\s(\w{3,20})?\s(st|ave|avenue|street|lane|parkway)\s\d{5}/i;
+        var cityValid = /\w+\,\s\w+(\s\w+)?/i;
+        var validateDate =/\d{2}\/\d{2}\/\d{4}/;
+        var nameValidate =/\w{2,20}\s\w{2,25}/i;
+        var validName = /\w+(\s\w+)?/;
+        var secretCode = /([A-Z])\w{7}\d[%|$|#|@|+|_|-|!]/;
+      // input must have atleast one capital at the beggining
+     // 7 chars then one digit 
+    //with atleast one of the following symbols [%|$|#|@|+|_|-|!]
+      
+        var setUpReg = function(reg){
+              var r = new RegExp(reg);
+              return r;
+        };
+        var validateUser = function(person){
+             if(typeof person === 'object'){
+                 return person;
+             }
+                 return null;
+            
+        }
+        var makePackage = function(itN,ty,belgTo,dOrd,dS){
+            
+            var itemNameChk = setUpReg(itN);
+            var tyChk = setUpReg(validName);
+            var validateCustomer = validateUser(belgTo);
+            var dateOrdered = setUpReg(validateDate);
+            var dateSent = setUpReg(validateDate);
+            
+            if(itemNameChk.test(itN) && tyChk.test(ty) && dateOrdered.test(dOrd) && dateSent.test(dS)){
+            if(validateDate){
+                
+            var item = {itemName:itN,type:ty,belongsTo:belgTo,dateOrdered:dOrd,dateSent:dS,sent:false,delivered:false};
+            
+                return item;
+            }}
+                return null;
+        }
+        var makePerson = function(name,address,city){
+            var nameCheck = setUpReg(nameValidate);
+            var addressCheck = setUpReg(addressFine);
+            var cityCheck = setUpReg(cityValid);
+            
+            if(nameCheck.test(name) && addressCheck.test(address) && cityCheck.test(city)){
+              // && address === addressFine && city === cityValid  
+            var person = {name:name,recievedPackage:false, address:address,city:city,orderedPackage:false};
+            
+               return person;
+            }  return null;
+        };
+        
+        var checkDate = function(date){
+            var dateCheck = setUpReg(date);
+            
+            if(dateCheck.test(item.dateOrdered && dateCheck.test(item.dateSent))){
+                 console.log();
+            }
+        };
+      
+        
+        var Juan = makePerson('Juan Morales','328 East 95th Street 10128','NY, New York');
+        var Joe = makePerson('Joe Johnson','11 22th Justin Ave 12230','BA, Boston');
+        
+        var Rover = makePackage('Rover','Tech',Juan,'06/25/1987','06/28/1987');
+        var MakeUp = makePackage('LipStick','Glamour',Joe,'08/25/1987','08/26/1987');
+        packageQueue = [Rover, MakeUp];
+     
+        var setAllPacksInCartToSent = function(packageQueue,truthy){
+             
+             for(var i = 0;i < packageQueue.length ;i++){
+                 packageQueue[i].delivered = truthy;
+                 console.log(packageQueue[i].delivered);         
+              }
+        };
+       
+        var validateDatesEntered = function(arr){
+            
+              arr.forEach(function(item,i){
+                    if(checkDate(item.dateOrdered)){
+                        
+                    }
+                  
+                  
+              });
+        }; 
+        
+        console.log(Juan);
+        console.log(Joe);
+        console.log('====================================');
+        console.log(Rover);
+        console.log('------------------------------------');
+        console.log(MakeUp);
+       
+        var fetchItemBuyerName = function(item,title){
+                var g = item.belongsTo[title];
+                return g;
+        } 
+        var checkIfItemSent = function(item){
+               if(!item.delivered || item.delivered === NULL){
+                   sent = false;
+               }else{
+                   sent = true;
+               }
+        };
+        
+        fetchItemBuyerName(Rover);
+        // converts to true
+        setAllPacksInCartToSent(packageQueue,true);
+       
+        var checkStructure = function(packageQueue){
+              var FIBN = packageQueue;
+              var str = /\d\d\s\w+\s\w{4,5}\s\w+\s\d{5}/;
+              
+              for(var y in FIBN){
+                  var addr = FIBN[y].belongsTo.address;
+                   console.log(addr);
+              }
+        };
+        
+        checkStructure(packageQueue);
+       
+        var fillInUserObj = function(item){
+            var iBFT  = item.belongsTo;
+          var obj = {
+                   name:iBFT.name,
+                   recievedPackage:iBFT.recievedPackage,
+                   addr:iBFT.address,
+                   city:iBFT.city,
+                   orderedPackage:iBFT.orderedPackage
+                };
+            
+            
+            return obj;
+        };
+        
+        var freshObj;
+        console.log('------------------------------------');
+        freshObj = fillInUserObj(Rover);
+        console.log(freshObj);
+        
+        var userlist = [Juan,Joe];
+        var i = 0;
+        var p = userlist === freshObj;
+        console.log(p)
+        function createOrder(per,pack){
+            if (typeof per && typeof pack === 'object'){
+                
+            }else{
+                return false;
+                
+            }
+        
+        } 
+        
+        createOrder();
+        //=====================================================test programs================================================
+    var pal = {
+       job:'developer',
+       title:'SEZ',
+       describe:function(){
+           console.log(this.job);
+       }
+       
+        
+        
+    };
+     pal.describe();    
+     var speedy = {job:'Sewer Cleaner'};
+     pal.describe.call(speedy);
+     
+     var date = { bill:2, increment:function(){console.log(this.bill += 1);}}
+     
+     var bills = {bill:4};
+     date.increment.call(bills);
+     var spin = 'spin 1';
+     var upper = Array.prototype.filter.call(spin,function(val){
+    return val.match(/[a-z]+/i); 
+         
+     });
+    console.log(upper.join(''));
+    function pet(name,spe){
+        this.name = name;
+        this.spe = spe;
+    }
+    
+    function view(){
+        return this.name + '';
+    }
+    
+    pet.prototype.v = view;
+    function cat(name){
+        pet.call(this,name,'cat');
+    }
+    
+    
+    cat.prototype = new pet('spun',12131);
+    console.log(cat.prototype);
+    
+})();
+
+var AiStates = {
+      STANDBY:0,
+      MOVING:1,
+      SEARCHING:2,
+      ATTACKING:3,
+      currentState:'',
+      2:''
+    
+}
+
+function AIenemy(hp,damage,mode){
+      this.hp = hp;
+      this.damage = damage;
+      this.mode = mode;
+}
+
+
+
+ function stateFunctions(AiS,s){
+   
+    if(typeof AiS === 'object'){
+        switch(AiS[s]){
+            case 0:
+                console.log('STANDBY');
+                break;
+            case 1:
+                console.log('Moving');
+                break;
+            case 2:
+                console.log('Searching');
+                break;
+            case 3:
+                console.log('Attacking');
+                break;
+            default:
+                console.log('STANDBY');
+        } 
+        AiS.currentState = AiS[s];
+    }
+}
+
+stateFunctions(AiStates,'ATTACKING');
+var rat = new AIenemy(100,5,AiStates);
+var bat = new AIenemy(100,5,AiStates);
+console.log(bat);
+
+
+var fixThis = function(){
+      var that = this;
+      this.build();
+}
+var wizard = {
+    Cast:fixThis,
+    build:function(){
+         var arr = [1,2,3,4,' space',/\s[a-b]/];
+         for(var y in arr){
+            console.log(arr[y]);
+            
+         }
+    }
+    }
+    
+wizard.Cast();
+var temp = 1;
+
+console.log(8>>3);
+temp <<= 4;
+console.log(~-1);
+
+if(~-1===0){
+    var t = 'e b'.trim();
+    console.log(t);
+    
+}
+
+
+var num = 1;
+var sum = 0;
+var obj = {nums:sum,4:5,arr:[]}
+  
+for(var i = 0;i < 30;i++){
+      sum = num >> 2;
+      num++
+      obj['arr'].push(sum);
+    
+}
+    console.log(obj);
+
+
+
+
+function ani(name){
+    this.name = name;
+    this.NameList = function(){
+    var arr = [];
+    arr.push(this.name);
+    console.log(arr);
+        
+    }
+}
+
+function canine(){
+    this.name = 'can';
+}
+function wolf(){
+    this.name = 'wolf';
+}
+canine.prototype = new ani();
+canine.prototype.constructor = canine;
+
+wolf.prototype = new ani();
+
+wolf.prototype.name = 'Rick';
+wolf.prototype.constructor = wolf
+
+
+console.log(wolf.prototype)
+
+
+var times = ['1:00 pm','1:00 p.m.','1:00 p','1:00pm',
+  '1:00p.m.','1:00p','1 pm','1 p.m.','1 p','1pm','1p.m.', '1p','13:00','13'];
+
+for ( var i = 0; i < times.length; i++ ) {
+  var d = new Date();
+  var time = times[i].match(/(\d+)(?::(\d\d))?\s*(p?)/);
+  d.setHours( parseInt(time[1]) + (time[3] ? 12 : 0) );
+  console.log('===========================');
+  console.log(time);
+  d.setMinutes( parseInt(time[2]) || 0 );
+  console.log( d );
+}
+
+var t1 = '1:00 p,';
+
+var tim = t1.match(/(\d+)(?::(\d\d))?\s*(p?)/);
+console.log(tim);
+
+var arr = [];
+for(var a in AiStates ){
+    // arr.push(a);
+}
+var arrayLike = {0: 'Value 0', 1: 'Value 1', length: 2};
+realArray = [].slice.call(arrayLike); // Shorter version
+arr = [].slice.call({1:'Value 1'}); // Shorter version
+
+arr.indexOf('Value 1');
+console.log(arr);
+
+
+var arr = [4, 2, 1,-10, -10,9, 9]
+var fis = arr.slice(1);
+console.log(fis);
+arr.reduce(function(a, b) {
+    if(a === b){
+        console.log(a + ' equal ' + b);
+    }
+  return a < b ? a : b
+}, Infinity);
+
+
+
+function printerError(s) {
+   var count= 0,i = 0, len = s.length;
+  while(i <= len){
+    if(/[^a-m]/.test(s.charAt(i))){
+       count++
+    }
+      //console.log(s.charAt(i));
+        i++;
+}
+    return count + '/' + s.length;
+}
+/*if(/[o-z]/.test(s.charAt(i))){
+       count++
+       }*/
+printerError("aaaxbbbbyyhwawiwjjjwwm");
+
+
+
+
+
+
+
+
+/*      case names.length === 1:
+            return 'likes this';
+         case names.length ===  3:
+            return names.slice().join() + 'likes this';
+         case names.length  >  4:
+            return names.forEach(function(item){return item}) + 'likes this';
+  
+  */
+
+
+
+
+String.prototype.toJadenCase = function (st) {
+           var temp = '';
+           var end = temp.replace('\A','\a?');
+           console.log(end);
+           
+           return end;
+
+
+};
+
+var str = "how can mirrors be real if our eyes aren't real";
+var res = str.replace(/[a-z]/i,/^[\A-Z](^\w)+\s/);
+var yu = /^[\A-Z](^\w)+\s/.test(str);
+console.log(yu)
+///^[\A-Z](^\w)+\s/g
+var sch  = "http://github.com/carbonfive/raygun";
+
+
+function WithoutURl(str){
+       var reg = new RegExp((http|https)\:\/\/\w+\.(\w+)\/\w+\/\w+);
+       var rush = reg.test(str);
+        
+       return rush;    
+    
+}
+WithoutURl(sch);
+
+
+
+
+
+
+
+
+
