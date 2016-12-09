@@ -1015,7 +1015,64 @@ function missingNumber(arr){
  missingNumber([5,2,9,6,4,10]);
     
     
+  
+function getValues(arr){
+      var stop =0;
+      var start = 0;
+      var end = arr.length;
+      var arrSet= [];
+    for(var i = start; i< end; i++){
+        var num = arr[i];
+        arrSet[i] = num;    
+    }
+     return arrSet;
+}
+getValues(uio);
+
+if (!Array.prototype.forEach) { 
+  Array.prototype.forEach = function(fn){ 
+    for ( var i = 0; i < this.length; i++ ) { 
+      fn( this[i], i, this); 
+    } 
+  }; 
+} 
+ 
+["a", "b", "c"].forEach(function(value, index, array){ 
+ // assert( value, "Is in position " + index + " out of " + (array.length - 1) ); 
+     console.log(value);
+});
     
+
+function revert(arr){
+   var constructed = {sum:0, arr:arr};
+    return function(start){
+            
+     var guts =  constructed.arr.reduce(function(prev,next){
+                 this.sum = prev + next;
+                 return this.sum;
+             },start);  
+          return guts;
+         }
+           
+
+}
+var toy = [2,3,4,5,6,7,8,9,10];
+
+revert(toy)(4);
+
+function broach(arr){
+    var tunnel = arr;
+    return tunnel.sort(function(a,b){
+        return a-b;}
+        );
+      
+    }
+  var uio = [2,4,2443,53,2,4,5,3,1,5];
+    
+  broach(uio);
+  
+  
+
 	  
 	  
 	  
