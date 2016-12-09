@@ -188,6 +188,570 @@ function spinalCase(str) {
   return t;
 }
 
+function makeArr(num){
+    var str = '*'.repeat(num);
+    return str;
+}
+
+function abbrevName(name){
+      return name.split(" ").map(function(item){
+             return item.split("").join('')[0];}).join('.').toUpperCase()}
+
+abbrevName('Ray Jankins');
+
+
+function abbrevName(name){
+  return name.match(/\b(\w)/g).toString().toUpperCase().replace(',', '.');
+}
+
+function shuffle(arr) {
+    var i,
+        j,
+        temp;
+    for (i = arr.length - 1; i > 0; i--) {
+        j = Math.floor(Math.random() * (i + 1));
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
+    return arr;    
+};
+// call the map function with it
+[]["map"]["constructor"]("console.log(abbrevName('Patto Ship'))")();
+"ksdhafjshd|sdiflkjsd|lasdjiflasdj|dl;fiaj".split("|")
+function test01(){
+	var arr = {Errors:[],counter:0},counter = 0, match=false;
+	
+	for(var i = 0; i < 22;i++){
+	var num = Math.round(Math.random() * 22 - 10);
+        console.log(num);
+       if(num === undefined || num < 0){
+	        counter++;
+	        arr.Errors.push(num);
+	        arr.counter = counter;
+		}
+	}
+	return arr;
+}
+function changeIdeals(arr){
+	var t = [],even= [],odd=[];
+	
+   arr.forEach(function(item){
+   	         //console.log(item)  
+   	      if(item % 2 === 0){
+   	          	even.push(item);
+   	      }else{
+   	      	    odd.push(item);
+   	      }
+   	      switch (item){ case item <10 :console.log(1)}
+   });	
+       console.log(' O :' + odd +  '\n E :' + even)
+}
+
+function ages(age){
+	
+	return age > 3 && age < 7 ? post():
+	       age  > 7 && age < 12 ? post2():
+	       age > 15 && age  < 20 ? test01:1;
+	
+}
+
+
+function stringGrab(str){
+	
+	return str.length < 0 ? ' ':
+	       str.length > 2 && str.length < 5 ? 'Vowell':
+	       str.length > 5 ? 'Max Length': '';
+}
+function ohNo(arr,i,t){
+	return  arr[i] === 0 ? t:
+	        arr[i] === 1 ? 1:
+	        arr[i] === 2 ? 2:
+	        arr[i] > 3 ? []:
+	        arr[i] < 0 ? 0 :'No Data';
+}
+var arr = [0,1,7,1,2,3,4,0,1,2,1,5];
+var nextProc = [];
+for(var i = 0; i < 10; i++){
+	       nextProc[i] = ohNo(arr,i,test01());
+}
+console.log(nextProc);
+toLeetSpeak("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG");
+
+function toLeetSpeak(str) {
+var s = {
+  A : '@',
+  B : '8',
+  C : '(',
+  D : 'D',
+  E : '3',
+  F : 'F',
+  G : '6',
+  H : '#',
+  I : '!',
+  J : 'J',
+  K : 'K',
+  L : '1',
+  M : 'M',
+  N : 'N',
+  O : '0',
+  P : 'P',
+  Q : 'Q',
+  R : 'R',
+  S : '$',
+  T : '7',
+  U : 'U',
+  V : 'V',
+  W : 'W',
+  X : 'X',
+  Y : 'Y',
+  Z : '2'
+};
+  var st =  str.split('').map(function(item){return s[item]||item}).join('');
+  
+   
+ return st;
+}
+
+
+
+
+
+/*
+
+ var arr = [];
+      var r = item === undefined ?' ':item;
+      arr[i] = r;
+      console.log(arr[i])
+      return arr[i]; 
+      .map(function
+  (item,i){return item === undefined ?' ':item}).join('');
+*/
+
+
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+reverseString('dafc');
+var arr = [319
+,680,
+180,
+690,
+129,
+620,
+762,
+689,
+762,
+318,
+368,
+710,
+720,
+710,
+629,
+168,
+160,
+689,
+716,
+731,
+736,
+729,
+316,
+729,
+729,
+710,
+769,
+290,
+719,
+680,
+318,
+389,
+162,
+289,
+162,
+718,
+729,
+319,
+790,
+680,
+890,
+362,
+319,
+760,
+316,
+729,
+380,
+319,
+728,
+716];
+
+//2 3 5
+function pass (arr){
+    var arrs =  [];
+    
+    for(var i = 0; i < arr.length;i++){
+         
+          arrs.push([0,0,0,0,0,0,0]);
+          arrs[i][1] = arr[i].toString().charAt(0);
+          arrs[i][2] = arr[i].toString().charAt(1);
+          arrs[i][5] = arr[i].toString().charAt(2);
+         var nums = arrs[i].reduce(function(pr,nx){
+            
+            return Number(pr) + Number(nx)},0);
+        console.log(nums);
+
+    }
+    
+    
+}
+function a (n){
+    var t = 0;
+    var arr = [0];
+    
+    console.log('===============');
+    for(var i = 1; i <= n;i++){
+          t =  Math.floor(Math.pow(i,2));
+          arr[i] = t  * 2 -  1;
+          
+    }
+    arr.shift();
+    console.log(arr);
+    var rare = arr.reduce(function(pr,nx){
+        return pr + nx;
+    });
+    console.log(rare);
+    console.log('===============');
+}
+
+var arr = [];
+var str = 'Gained So Much';
+var num = 0;
+
+for(var i = 0; i < str.length - 1 ;i++){
+         var nunu = str[i] + str[i + 3];
+         arr[i] = nunu;
+        if(nunu === 'undefined'){
+           
+            break;
+        }
+    }
+       arr.pop();
+       var rrhhh = arr.slice(arr.length - 1);
+       var uiy =  arr.pop();
+        console.log(arr);
+        
+        var join = [];
+        var o = 0, y = 0;
+        while(o < arr.length){
+              var num = arr[o];
+              join.push(num);    
+            
+              
+              var sub1=[],sub2=[];
+              sub1 = arr[o];
+              if(sub1[o] == ' '){
+                  sub2[o] = arr[o].split('');
+                  console.log(sub2[o]);
+              }
+                o++;
+        }
+        
+        
+function reverser(sentence) {if(!sentence){ return null;}
+	 return sentence.split(" ").map(function(item){
+	     return item.split("").reverse().join("")}).join(' ');
+}
+reverser("hi mom");     
+        
+function noSpace(x){
+      var t =  x.replace(/\s/g,'');
+      return t;
+}
+
+[1,2,3,4,'5','7'].reduce(function(pr,next){
+           return Number(pr) + Number(next);
+    },0);
+
+
+var data = [10,12,5,9,22,18,null,21,17,null,3,12];
+data.filter(
+    function(obj,index){return obj != null}
+);
+
+  console.log('  I |   J');
+  console.log('----------');
+for(var i=0, j=0; i<5; i++, j++){
+  console.log("I: "+i+", J: "+j );
+}
+
+
+
+data.find(function(v,i){return v === i;});
+
+function findMagic(arr){
+    if(!(arr instanceof Array) || arr.length === 0){return null}
+  return arr.findIndex(function(x,i){ return x == i});
+}
+findMagic(data);
+
+if (!Array.from) {
+  Array.from = function(object) {
+    'use strict';
+    return [].slice.call(object);
+  };
+}
+var Y = Array.from({});
+
+function textToBinary(string) {
+    return string.split('').map(function (char) {
+        if(!(char instanceof String)){ return null;}
+        return char.charCodeAt(0).toString(2);
+    }).join('');
+}
+textToBinary('A');
+var splitz = "abcdefghijklmnopqrstuvwxyz".split('');
+  splitz.map(function(item){
+      if(item === null || item.length < 1){return null;}
+    return textToBinary(item);
+    
+});
+
+var str = '01111101';
+var res = str.match(/[01]{8}/g).map(function(v){
+    if(typeof v ==='string'||v.length === 0||v === null){
+    return String.fromCharCode( parseInt(v,2))}}).join('');
+/*
+ Chinese letters
+var str = '01011101';
+var res = str.match(/[01]{8}/g).map(function(v){
+    if(typeof v ==='string'||v.length === 0||v === null){
+    return String.fromCharCode( parseInt(v,0))}}).join('');
+*/
+
+console.log(res);
+console.log('|||')
+"1234567890".match(/.{1,2}/g);
+var ui = "12834140742".match(/.{1,2}/g);
+//console.log(ui[0].match(/.{1,1}/g))
+
+var iop  = ui.map(function(item){
+    return item.match(/.{1,1}/g);
+});
+
+
+console.log(/\d/.exec(iop[0]));
+
+
+// Insanity 
+
+format = function(b, a) {
+        if (!b || isNaN(+a)) return a;
+        var a = b.charAt(0) == "-" ? -a : +a,
+            j = a < 0 ? a = -a : 0,
+            e = b.match(/[^\d\-\+#]/g),
+            h = e && e[e.length - 1] || ".",
+            e = e && e[1] && e[0] || ",",
+            b = b.split(h),
+            a = a.toFixed(b[1] && b[1].length),
+            a = +a + "",
+            d = b[1] && b[1].lastIndexOf("0"),
+            c = a.split(".");
+            
+        if (!c[1] || c[1] && c[1].length <= d)
+        a = (+a).toFixed(d + 1);
+        d = b[0].split(e);
+        b[0] = d.join(" ");
+        var f = b[0] && b[0].indexOf("0");
+        if (f > -1)
+            for (; c[0].length < b[0].length - f;)
+                   c[0] = "0" + c[0];
+        else +c[0] == 0 && (c[0] = "");
+        a = a.split(".");
+        a[0] = c[0];
+        if (c = d[1] && d[d.length -
+                1].length) {
+            for (var d = a[0], f = "", k = d.length % c, g = 0, i = d.length; g < i; g++) f += d.charAt(g), !((g - k + 1) % c) && g < i - c && (f += e);
+            a[0] = f
+        }
+        a[1] = b[1] && a[1] ? h + a[1] : "";
+        return (j ? "-" : "") + a[0] + a[1]
+    };
+    var str="1234567890";
+    var formatstr=format( "##{}##.", str);
+    console.log(formatstr);
+
+    function Create2DArray(rows) {
+  var arr = [];
+
+  for (var i=0;i<rows;i++) {
+     arr[i] = [];
+  }
+
+  return arr;
+}
+
+function Map(rows){
+	   var arr = [];
+	   for( var i = 0; i < rows;i++){
+              arr[i] = [];	   	
+	   }
+}
+
+function make2dArr(len){
+	var a = [];
+	while(a.push([0]) < len);
+	
+	return a;
+}
+
+
+var darr = make2dArr(8);
+darr.push([])
+//console.log(darr);
+
+var g = [];
+function put(arr,n){
+   return arr.map(function(x){ 
+    x.push(0)
+	return x[n]});
+}
+
+var twoDimensionalArray = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+var p = [];
+for(var i = 0;  i < 4; i++){
+	
+   p = put(twoDimensionalArray,i);
+   
+}
+
+console.log(p);
+
+/*function matrix( rows, cols, defaultValue){
+
+  var arr = [];
+
+  // Creates all lines:
+  for(var i=0; i < rows; i++){
+
+      // Creates an empty line
+      arr.push([]);
+
+      // Adds cols to the empty line:
+      arr[i].push( new Array(cols));
+
+      for(var j=0; j < cols; j++){
+        // Initializes:
+        arr[i][j] = defaultValue;
+      }
+  }
+
+return arr;
+}*/
+function letterGenerator(){
+	var i  = Math.floor(Math.random(68) * 122 - 1);
+	
+	return String.fromCharCode(i).trim();
+	
+}
+
+
+
+function WordGenerator(n){
+	 var LG,i = 0,j,l = [];
+	  while(i < n){
+	  	 l[i] = letterGenerator();
+	  
+	     i++;
+	   } 
+	  
+	 return l;
+	
+}
+
+var wordGenerator = WordGenerator(5);
+var wordPart = wordGenerator.join('')
+
+
+    var arr = [];
+	     for(var i = 0; i < 120;i++){
+             arr.push(WordGenerator(5));
+	     	
+	     }
+var para = arr.join();
+   function wordSearch(para){
+	      var arr = para.split('');
+	     	
+	     var pos = arr.filter(function(item){
+	     	    	return item.search(/\d|\w|\,|\></i);
+	     	});
+	     	console.log('==========================================')
+	     	console.log(pos.join(''));
+	     	
+	     	console.log('==========================================')
+}
+   	wordSearch(para);
+   	
+  	function squareSum(numbers){
+		var sum = 0;
+	    numbers.forEach(function(item){
+		   var it = Math.pow(item,2);
+		   sum = it + sum ; 
+		});
+        return sum;
+}
+
+
+
+
+/*Create a function close_compare that compares two numbers a and b.
+
+When a is lower than b, return -1.
+
+When a is higher than b, return 1.
+
+However when a and b are the same or close within margin, return 0. Margin may not always be given.
+
+Example: if a = 3, b = 5 and the margin is 3, since a and b are no more than 3 apart, close_compare should return 0. Otherwise, if margin is 0, a is less than b and close_compare should return -1.
+
+Assume: margin >= 0*/
+/*
+function close_compare(a,b){
+	   var aHigher = a > b  ? 1: -1,margin = 0 ;
+	   var abEqual = a === b ? 0;
+	   margin = Math.abs(a - b);
+	   if(aHigher){
+	 	
+	   } 
+	
+}*/
+  
+  
+  
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
