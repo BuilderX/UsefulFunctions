@@ -986,6 +986,34 @@ function subS(str,subStr){
         
     }
     
+    var a=[4,6,7], b = [44,4];
+Array.prototype.unshift.apply(a,b);
+
+function UserData(){}
+UserData.prototype = {
+     friends:[],
+     enemies:[],
+     add:function(g){
+           this.friends.push(a)
+     },
+     removeBeg:function(){ this.unshift();}
+    
+};
+function missingNumber(arr){
+   var n = arr.length+1, 
+   sum = 0,
+   expectedSum = n * ( n + 1 ) / 2;
+  
+  for(var i = 0, len = arr.length; i < len; i++){
+         sum += arr[i];
+  }
+  
+  return expectedSum - sum;
+  
+}
+
+ missingNumber([5,2,9,6,4,10]);
+    
     
     
 	  
