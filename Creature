@@ -1,0 +1,103 @@
+var creature = new createOne(100, 'N');
+createOne.prototype.changeDirection = function(str){
+       this.moveDir = str;  
+};
+
+createOne.prototype.filterCode = function(){
+    var len = this.geneticCode.length,genArr =this.geneticCode,
+              TAarr = [],GCarr = [];
+          for(var i = 0 ; i < len - 1;i++){
+              if(genArr[i] === 'A' && genArr[i + 1] === 'T'){
+                  TAarr.push(1); TAarr.push(0);
+              }
+               if(genArr[i] === 'G' && genArr[i + 1] === 'C'){
+                  GCarr.push(1); GCarr.push(0);
+              } 
+          }  
+           console.log(TAarr);
+           console.log('============================================');
+           console.log(GCarr);
+    
+};
+createOne.prototype.countGenCode = function(){
+           var count = {};
+    var t = this.geneticCode.reduce(
+        function(countMap, word) {
+           countMap[word] = ++countMap[word] || 1;
+              return countMap;
+        },{});
+             return t;
+};
+createOne.prototype.countGenCodeLength = function(){
+        var obj = creature.countGenCode();
+        var sum = 0;
+        for(var a in obj){
+            if(obj.hasOwnProperty(a)){
+            var num = obj[a];
+            sum = num + sum;
+            }
+        }
+        return sum;
+    /*
+        return reduce(function(pr,nx){
+              console.log(pr);
+        },0);
+*/};
+
+
+creature.changeDirection('S');
+
+if(creature){  
+    creature.filterCode();
+    creature.countGenCode();
+    creature.countGenCodeLength();
+}
+
+
+/*       var report = {};
+
+arr.forEach(function(el){
+  report[el] = report[el] + 1 || 1;
+  */
+  
+  function genAlgo(){
+    fitnessPool = [],population = [];
+    var maxFitness = 0 ;
+       this.generate = function(){
+           for(var i = 0; i < this.population.length;i++){
+             if(this.population[i].fitness > maxFitness){
+                  maxFitness = this.population[i].fitness;
+               }
+           }
+           
+           // refill the population with children
+           for( i = 0; i < this.population.length;i++){
+             var partnerA = this.acceptReject();
+             var partnerB = this.acceptReject();
+             var child = partnerA.crossOver(partnerB);
+        
+             child.mutate(this.mutationRate);
+             newPopulation[i] = child;
+             } 
+               this.population = newPopulation;
+               this.generations++;
+               
+           };
+          this.acceptReject = function(){
+            var BESAFE = 0;
+            while(true){  
+             var index = Math.floor(Math.random(0,this.population.length));
+             var r = Math.random(0,maxFitness);
+             var partner = this.population[index];  
+             
+              if(r < partner.fitness){
+                  return partner;
+              }
+                  BESAFE++;
+                if(BESAFE > 10000){
+                    return null;
+                }
+            }
+              
+          };
+  }
