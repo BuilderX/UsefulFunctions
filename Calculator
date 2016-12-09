@@ -1,0 +1,43 @@
+function calculator(){}
+
+calculator.prototype = {
+    takeData:function(a){prompt(a);},
+    add : function(a,b){return a + b;},
+    sub : function(a,b){return a - b;},
+    divide:function(a,b){return a / b;},
+    mult:function(a,b){return a * b;},
+    results:[],
+    total:function(results){ console.log(results);},
+    storedResults:function(results){return results}
+}
+
+var calStart = new calculator();
+var added = calStart.add(2,3);
+var divided = calStart.divide(10,53);
+var multiply = calStart.divide(10,53);
+
+var i = 0;
+var sum = 0;
+var arr = calStart.results;
+calStart.results[0] = added;
+calStart.results[1] = divided;
+calStart.results[2] = multiply;
+
+calStart.results;
+
+while(i < arr.length){
+      
+      var num = arr[i];
+      sum += num;
+      console.log(sum);
+      i++;
+    
+}
+
+var results = calStart.storedResults(arr);
+var value = 0;
+var holder2 = [];
+var value2 =0;
+var end;
+var store = [3,2,3,11,5,6,7,4,3,23,4,5,4];
+
