@@ -1,0 +1,195 @@
+var Rappers = {
+     nas:{
+         kicking:true,
+         ImLike:'',
+         has:'',
+         said:'',
+         action:'',
+         wearing:'',
+         hand:'',
+         Im:'',
+         IsWith:'',
+         location:'',
+         steeloKnown:true,
+         thoughts:''
+     }
+};
+var group = {backFlipped:false}
+var bulletHoles;
+var peepHoles = [];
+var monkeyFlipped = Rappers.nas;
+var funkyRhythm = true;
+var musician,composition;
+var Nas = Rappers.nas;
+var me = '';
+var G_packs;
+var runningThroughTheBlockShooting = false;
+                // !== Not
+if(Rappers.nas === monkeyFlipped){
+     with(funkyRhythm){
+          if(Rappers.nas.kicking){
+              Nas.ImLike = 'Scarface';
+              Nas.action = 'Sniffing Cocaine';
+              Nas.action = 'Holdin a M-16';
+              console.log('See with the pen');
+              Nas.Im = 'Extreme';
+              peepHoles = [bulletHoles];
+              Nas.wearing = 'street clothes';
+              Nas.hand = 'a nine';
+              with(Nas.hand){
+              foesDefeated = true;
+              }
+              if(Nas.steeloKnown){
+                 with(Nas.has === 'airplay' || !'airplay'){ 
+                      
+                      switch(Nas.location || Nas.action ){
+                          case 'His Stairway':
+                               Nas.has = 'E&J';
+                               Nas.action = 'sitting bent up';
+                           break;   
+                          case 'on the corner' :
+                            Nas.action = 'betting Grants';
+                            Nas.IsWith = 'with celo champs';
+                           break;
+                          case 'Laughing at baseheads':
+                            Nas.action = 'tryin to sell some broken amps';
+                                G_packs = 0;
+                                console.log('off quick');
+                                console.log('forever niggas talk shit');
+                           break;        
+                          case 'Remeniscing':
+                              var lastTime = {
+                                  taskForce:'flipped'
+                              }
+                          break;      
+                          default:
+                          console.log('no action has happened');
+                      }
+                if(runningThroughTheBlockShooting){
+                  var startRevolution = true;
+                if(startRevolution){
+                    var body = {
+                       bodyCaught:true,
+                       headForHouston:true
+                             };
+                             
+                             var caughtOffGuard = true; 
+               if(caughtOffGuard){
+                          
+                        var mac10 = {
+                             inGrass:true,
+                             hit:true,
+                             squeezed:true,
+                             cockit:true,
+                             bulletsInChamber:3
+                             };
+               if(mac10.inGrass){
+                               
+                           Nas.action = 'Ran like a cheetah';
+                           Nas.thoughts = 'An assassin';
+                           Nas.action === 'picked the '+mac10 + ' Up';
+               if(Nas.action === 'Picked Up'){
+                                Nas.said = 'Back up';
+               if(mac10.spit === true){
+                           console.log('niggaz ran');
+                           group.backFlipped = true;
+                           group.scream = true;
+                           Nas.action = 'Arm Shook'; 
+                           Nas.action = "Couldn't look";
+         if(Nas.action === squeezed.squeezed){
+      console.log("heard it click yo, my shit is stuck") 
+      try{
+       console.log(cockit  + "it wouldn't shoot now I'm in");
+     var inDanger = true;
+     if(inDanger){
+         
+     }
+          }catch(exception){
+           
+           }finally{
+               console.log('pulled' + mac + 'back')
+                if(mac10.bulletsInChamber){
+                // to the 
+                 Nas.location = 'Building lobby';   
+                 var building = {
+                     inside:children = {
+                        seeAs:'high as I be'  
+                     }
+                 }
+                         
+                }
+                // !== NOt
+         if(game !== 'Same'){
+             console.log('Got younger niggaz pullin the triggers bringing fame to they name');
+             var claim = {
+                 corners:true,
+                 crewswithoutguns:true
+             }
+             var dayLight = true;
+             if(dayLight){
+                 var cokePrice = 20;
+                 var cokeGood = cokePrice < 10 ? true:false;
+                 var stickupKids = "Fo'-fives" && "gauges" + mac;
+                 console.log("Same niggaz'll catch a back to back, snatchin yo' cracks in black");
+                 var snitch = {location :'block'}
+            if(snitch.location === 'block'){
+                      console.log('niggaz getting knocked');
+                      var holdStash = true;
+            if(cokePrice < 10){
+                          holdStash = false;
+            if(cokeGood){
+            console.log("I know this crackhead, who said she gotta smoke nice rock And");                  
+                              
+                          }
+                      }
+                     
+                 }
+                
+                 
+             }
+         }
+            
+           }
+                   
+                }
+                                  
+                                }
+                                
+                             }
+                           }
+                             
+                         }     
+                         }
+                      }
+                     
+                      
+                 }    
+                     
+              }
+              
+              
+              }}   
+          
+     
+    
+}
+console.log(Rappers);
+
+/*
+(So whatchu sayin?) It's like the game ain't the same
+Got younger niggaz pullin the triggers bringing fame to they name
+and claim some corners, crews without guns are goners
+In broad daylight, stickup kids, they run up on us
+Fo'-fives and gauges, Macs in fact
+Same niggaz'll catch a back to back, snatchin yo' cracks in black
+There was a snitch on the block gettin niggaz knocked
+So hold your stash until the coke price drop
+I know this crackhead, who said she gotta smoke nice rock
+And if it's good she'll bring ya customers in measuring pots, but yo
+You gotta slide on a vacation
+Inside information keeps large niggaz erasin and they wives basin
+It drops deep as it does in my breath
+I never sleep, cause sleep is the cousin of death
+Beyond the walls of intelligence, life is defined
+I think of crime when I'm in a New York state of mind
+*/
