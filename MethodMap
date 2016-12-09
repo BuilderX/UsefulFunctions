@@ -1,0 +1,114 @@
+String.prototype.toJadenCase = function (st) { 
+        return st.split('');
+
+
+};
+
+String.prototype.toJadenCase("ste");
+
+
+function disemvowel(str) {
+       var vow = /[A,E,I,O,U]/gi;
+ 
+      return str.replace(vow,'');
+      
+}
+
+var i = disemvowel('N ffns bt,Yr wrtng s mng th wrst v vr rd');
+console.log(i);
+
+var mystring = "crt/r2002_2";
+//mystring = mystring.replace('/r','/');
+
+function Counter(){
+       var i = 0;
+       return i += 1;
+}
+
+Counter.prototype.incr = function() {
+        return Counter();
+        
+}
+function arraySum(arr) {
+       var y =  arr.reduce(function(prev,next){
+           return prev + next;
+       });
+       console.log(y);
+}
+function fib(num){
+    if(num <= 2 ){return 1;}
+    return fib(num - 1)  + fib(num - 2);
+}
+
+fib(7);
+function pali(pal1,pal2){
+      var sum = pal1 * pal2;
+      sum = String(sum);
+      
+      if(!paliDrome(sum)){
+           return false;
+      }else{
+           return sum;
+      }
+       console.log(sum);
+    
+}
+
+var f = pali(421,452);
+console.log(f);
+
+function paliDrome(s){
+        var sub1;
+        var sub2;
+        var half = s.length / 2;
+     if(s.charAt(0) === s.charAt(s.length-1)){
+        for(var i = 0; i <= half;i++){
+           for(var j = i; j >= half ;j--){
+                sub1 = s.charAt(i);
+                sub2 = s.charAt(j);
+             if(sub1 === sub2){
+                 console.log('palidrome');
+             }else{
+                 console.log('Not One');
+         }
+        }}  
+        }else{
+            console.log('Not');
+        }}
+    function isPrime(value) {
+    for(var i = 2; i < value; i++) {
+        if(value % i === 0) {
+            return false;
+        }
+    }
+    return value > 1;
+}
+
+//isPrime(11);
+
+
+for(var i = 1; i < 10001;i++){
+        var num = isPrime(i);
+        if(num){}
+    
+}
+
+
+function numberDifferences(arr){
+          var differences = 0;
+          var doe = [];
+          for(var i = 0; i < arr.length; i++){
+                 var current = arr[i];
+                 var next = arr[i + 1];
+                 differences = current - next;                 
+                 doe[i] = differences;
+          }
+          
+}
+
+numberDifferences([10,4,22,15,32,11]);
+
+
+
+
+
